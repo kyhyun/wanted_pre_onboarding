@@ -3,8 +3,9 @@ import styles from "./Tab.module.css";
 function Tab() {
   const tabs = ["감자", "고구마", "카레라이스"];
   const [coordinateValue, setCoordinateValue] = useState(0);
+  const translateX = { transform: `translateX(${coordinateValue}px)` };
   const onChangeList = (e) => {
-    // 감자 리스트를 선택한 경우
+    // 감자를 선택한 경우
     if (e.target.textContent === tabs[0]) {
       setCoordinateValue(0);
     }
@@ -30,10 +31,7 @@ function Tab() {
         })}
       </ul>
       <div className={styles.slideContainer}>
-        <div
-          className={styles.slider}
-          style={{ transform: `translateX(${coordinateValue}px)` }}
-        ></div>
+        <div className={styles.slider} style={translateX}></div>
       </div>
     </div>
   );
