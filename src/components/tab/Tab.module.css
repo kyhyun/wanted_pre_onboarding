@@ -1,0 +1,36 @@
+@charset "utf-8";
+.tabList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fdfdfd;
+  width: 300px;
+  height: 60px;
+}
+
+.tab {
+  display: flex;
+  font-weight: bold;
+  font-size: 0.7rem;
+  color: #444;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  cursor: pointer;
+}
+/* 
+.tab:not(:last-child) {
+} */
+
+.slideContainer {
+  width: 300px;
+  height: 3px;
+  background: #ddd;
+}
+
+.slider {
+  width: calc(100% / 3);
+  height: inherit;
+  background: rgb(238, 64, 189);
+  transition: all 0.5s;
+}
