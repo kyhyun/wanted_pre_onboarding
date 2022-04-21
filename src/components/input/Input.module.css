@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+.inputContainer {
+  width: 80%;
+  height: 120px;
+  border-radius: 0.25rem;
+  border: 1px solid #ddd;
+  display: flex;
+  background: #fdfdfd;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4px 8px;
+}
+
+.inputContainer .contentTitle {
+  color: #222;
+  font-size: 0.6rem;
+  padding: 4px 0 4px 40px;
+}
+
+.inputContainer .inputContent {
+  width: 80%;
+  height: 35px;
+  border: 1px solid #ddd;
+  display: flex;
+  border-radius: 0.25rem;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.inputContainer .invalid {
+  color: rgb(219, 34, 34);
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 50px;
+  margin-top: 4px;
+}
+
+.inputContainer .inputContent input {
+  width: 80%;
+  border: none;
+}
+
+.inputContainer .inputContent input:focus {
+  outline: none;
+}
+
+.inputContainer .favicon {
+  opacity: 0.8;
+  transition: color 0.5s;
+  user-select: none;
+}
+
+input[type="password"] + .favicon {
+  cursor: pointer;
+}
+
+.inputContainer .favicon:focus {
+  opacity: 1;
+}
+
+.inputContainer .favicon.valid,
+.inputContainer .favicon.checked {
+  color: rgb(238, 64, 189);
+}

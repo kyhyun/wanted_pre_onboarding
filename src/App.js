@@ -3,12 +3,16 @@ import "./reset.css";
 import Toggle from "./components/toggle/Toggle";
 import Tab from "./components/tab/Tab";
 import Slider from "./components/slider/Slider";
+import Input from "./components/input/Input";
+import DropDown from "./components/dropDown/DropDown";
 function App() {
   return (
     <div className={styles.App}>
       <Toggle />
       <Tab />
       <Slider />
+      <Input />
+      <DropDown />
     </div>
   );
 }
