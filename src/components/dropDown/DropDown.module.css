@@ -1,0 +1,91 @@
+@charset "utf-u";
+
+.dropContainer {
+  width: 50%;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  background: rgb(240, 240, 240);
+  padding: 8px 0;
+  border-radius: 0.5rem;
+}
+
+.dropContainer .dropButtonContent .dropButton {
+  width: 90%;
+  height: 30px;
+  text-align: left;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.dropContainer .dropButtonContent {
+  width: 90%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #777;
+  background: #fff;
+}
+
+.searchContainer {
+  width: 90%;
+  height: 200px;
+  margin-top: 4px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid #777;
+  background: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  box-shadow: 2px 1px 1px #aaa;
+}
+
+.searchContainer .searchContent {
+  width: 95%;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #aaa;
+}
+
+.searchContainer .searchContent .searchBar {
+  width: 80%;
+  border: none;
+  color: #888;
+}
+
+.searchContainer .searchContent .searchBar:focus {
+  outline: none;
+}
+.searchContainer .searchContent .faSearch {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+.searchContainer .searchItems {
+  width: 100%;
+  font-size: 0.9rem;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.searchContainer .searchItems .searchItem {
+  width: 98%;
+  height: 26px;
+  padding: 4px 0 0 8px;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+.searchContainer .searchItems .searchItem:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
