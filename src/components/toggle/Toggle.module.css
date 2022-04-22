@@ -4,28 +4,6 @@
   box-sizing: border-box;
 }
 
-/* Title */
-:global .title {
-  position: absolute;
-  top: 10px;
-  left: 15px;
-  font-weight: bold;
-}
-
-/* Wrap */
-:global .wrap {
-  width: 85%;
-  height: 200px;
-  border-radius: 0.75rem;
-  border: 1px solid #222;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto 0;
-  position: relative;
-  flex-direction: column;
-}
-
 .contents,
 .slider {
   display: flex;
