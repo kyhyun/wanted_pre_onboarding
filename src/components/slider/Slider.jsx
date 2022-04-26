@@ -35,6 +35,7 @@ function Slider() {
           max="100"
           step="1"
           list="progressPoint"
+          value={result}
           defaultValue="1"
           className={`${styles.slider}`}
           onChange={onChangeInputRange}
