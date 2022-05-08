@@ -1,34 +1,29 @@
-import React, { useState } from "react";
-import styles from "./Toggle.module.css";
+import { useState } from 'react'
+import styles from './Toggle.module.scss'
+import classNames from 'classnames/bind'
 
-const Toggle = () => {
-  const [toggle, setToggle] = useState(false);
-  // 토글 버튼의 옵션 상태를 변경한다.
-  const onChangeList = (e) => {
-    setToggle((prevState) => !prevState);
-  };
+function Toggle() {
+  const [toggle, setToggle] = useState(false)
+  const cx = classNames.bind(styles)
+
+  const onClickToggle = () => {
+    setToggle((prevState) => !prevState)
+  }
+
   return (
-    <div className="wrap">
-      <h2 className="title">Toggle</h2>
-      <div className={styles.contents}>
-        <div
-          className={`${styles.slider} ${!toggle ? "" : styles.selected}`}
-        ></div>
-        <button
-          className={styles.item}
-          onClick={!toggle ? undefined : onChangeList}
-        >
+    <div className='wrap'>
+      <h2 className='title'>Toggle</h2>
+      <div className={cx(styles.contents)}>
+        <div className={cx({ slider: true, selected: toggle })} />
+        <button type='button' className={styles.item} onClick={onClickToggle} value={toggle}>
           기본
         </button>
-        <button
-          className={styles.item}
-          onClick={!toggle ? onChangeList : undefined}
-        >
+        <button type='button' className={styles.item} onClick={onClickToggle} value={toggle}>
           상세
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Toggle;
+export default Toggle

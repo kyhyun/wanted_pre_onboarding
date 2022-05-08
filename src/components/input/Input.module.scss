@@ -1,40 +1,41 @@
-@charset "utf-8";
+@charset "utf-u";
+@use '/src/styles/constants/colors';
 
 .inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 80%;
   height: 120px;
-  border-radius: 0.25rem;
-  border: 1px solid #ddd;
-  display: flex;
-  background: #fdfdfd;
-  justify-content: center;
-  flex-direction: column;
   padding: 4px 8px;
+  background: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
 }
 
 .inputContainer .contentTitle {
-  color: #222;
-  font-size: 0.6rem;
   padding: 4px 0 4px 40px;
+  font-size: 0.6rem;
+  color: colors.$GRAY2;
 }
 
 .inputContainer .inputContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   width: 80%;
   height: 35px;
-  border: 1px solid #ddd;
-  display: flex;
-  border-radius: 0.25rem;
-  justify-content: space-around;
-  align-items: center;
   margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
 }
 
 .inputContainer .invalid {
-  color: rgb(219, 34, 34);
+  margin-top: 4px;
+  margin-left: 50px;
   font-size: 0.7rem;
   font-weight: 700;
-  margin-left: 50px;
-  margin-top: 4px;
+  color: rgb(219, 34, 34);
 }
 
 .inputContainer .inputContent input {
@@ -47,20 +48,19 @@
 }
 
 .inputContainer .favicon {
+  user-select: none;
   opacity: 0.8;
   transition: color 0.5s;
-  user-select: none;
-}
-
-input[type="password"] + .favicon {
-  cursor: pointer;
 }
 
 .inputContainer .favicon:focus {
   opacity: 1;
 }
 
-.inputContainer .favicon.valid,
-.inputContainer .favicon.checked {
-  color: rgb(238, 64, 189);
+[input='password'] .favicon {
+  cursor: pointer;
+}
+
+.inputContainer .favicon.valid {
+  fill: rgb(238, 64, 189);
 }

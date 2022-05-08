@@ -1,84 +1,88 @@
 @charset "utf-u";
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
 
 .dropContainer {
-  width: 50%;
-  height: 190px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+  height: 190px;
+  padding: 8px 0;
   overflow: hidden;
   background: rgb(240, 240, 240);
-  padding: 8px 0;
   border-radius: 0.5rem;
 }
 
 .dropContainer .dropButtonContent .dropButton {
   width: 90%;
-  height: 30px;
+  height: 28px;
+  color: colors.$GRAYA;
   text-align: left;
+  cursor: pointer;
   background: #fff;
   border: none;
-  cursor: pointer;
-  color: #aaa;
 }
 
 .dropContainer .dropButtonContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 90%;
   height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #777;
   background: #fff;
+  border: 1px solid colors.$GRAY7;
 }
 
 .searchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 90%;
   height: 200px;
   margin-top: 4px;
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  border: 1px solid #777;
   background: #fff;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
+  border: 1px solid #777;
+  border-radius: 0.5rem;
   box-shadow: 2px 1px 1px #aaa;
 }
 
 .searchContainer .searchContent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   width: 95%;
   padding: 4px 8px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   border-bottom: 1px solid #aaa;
 }
 
 .searchContainer .searchContent .searchBar {
   width: 80%;
+  color: colors.$GRAY8;
   border: none;
-  color: #888;
 }
 
 .searchContainer .searchContent .searchBar:focus {
   outline: none;
 }
+
 .searchContainer .searchContent .faSearch {
   font-size: 0.8rem;
-  color: #aaa;
+  color: colors.$GRAYA;
 }
+
 .searchContainer .searchItems {
-  width: 100%;
-  font-size: 0.9rem;
-  color: #aaa;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  font-size: 0.9rem;
+  color: colors.$GRAYA;
 }
+
 .searchContainer .searchItems .searchItem {
   width: 98%;
   height: 26px;
@@ -86,6 +90,7 @@
   cursor: pointer;
   border-radius: 0.25rem;
 }
+
 .searchContainer .searchItems .searchItem:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 10%);
 }

@@ -1,0 +1,7 @@
+export { ReactComponent as LogoImage } from './logo.svg'
+export { ReactComponent as CheckIcon } from './check.svg'
+export { ReactComponent as CaretDown } from './caret-down-solid.svg'
+export { ReactComponent as CircleCheck } from './circle-check-solid.svg'
+export { ReactComponent as EyeSlash } from './eye-slash-solid.svg'
+export { ReactComponent as Eye } from './eye-solid.svg'
+export { ReactComponent as Magnifying } from './magnifying-glass-solid.svg'

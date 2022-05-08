@@ -1,4 +1,7 @@
-@charset "utf-8";
+/* stylelint-disable */
+// http://meyerweb.com/eric/tools/css/reset/
+// v2.0 | 20110126
+// License: none (public domain)
 
 html,
 body,
@@ -84,10 +87,10 @@ video {
   padding: 0;
   margin: 0;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline;
   border: 0;
 }
-
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -103,29 +106,30 @@ section {
   display: block;
 }
 
-/* 줄 높이 초기화 */
 body {
   line-height: 1;
 }
 
-/* 리스트 스타일 초기화 */
 ol,
-ul {
+ul,
+li {
   list-style: none;
 }
 
-/* 인용 스타일 초기화 */
 blockquote,
 q {
   quotes: none;
 }
 
+blockquote::before,
+blockquote::after,
+q::before,
 q::after {
   content: '';
   content: none;
 }
 
 table {
-  border-spacing: 0;
   border-collapse: collapse;
+  border-spacing: 0;
 }

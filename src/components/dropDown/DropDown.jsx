@@ -1,82 +1,73 @@
-import React, { useState, useCallback } from "react";
-import styles from "./DropDown.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCaretDown,
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons";
+import { useState, useCallback } from 'react'
+import styles from './DropDown.module.scss'
+import classNames from 'classnames'
+
+import { CaretDown, Magnifying } from '../../assets/svgs/index'
 
 function DropDown() {
-  const [chooseItem, setChooseItem] = useState("All Symbols");
-  const [search, setSearch] = useState("");
-  const [toggle, setToggle] = useState(false);
-  const symbols = [
-    "All Symbols",
-    "ETHUSD.PERP",
-    "BCHUSD.PERP",
-    "1000SHIBUSD.PERP",
-  ];
-  // 드랍다운 버튼 클릭
+  const [chooseItem, setChooseItem] = useState('All Symbols')
+  const [search, setSearch] = useState('')
+  const [toggle, setToggle] = useState(false)
+  const symbols = ['All Symbols', 'ETHUSD.PERP', 'BCHUSD.PERP', '1000SHIBUSD.PERP']
+  const cx = classNames.bind(styles)
+
   const onClickDropButton = useCallback(() => {
-    setToggle((prevState) => !prevState);
-  }, []);
-  // 검색 리스트 아이템 클릭
+    setToggle((prevState) => !prevState)
+  }, [])
+
   const onClickSearchItem = useCallback((e) => {
-    setChooseItem(e.target.textContent);
-  }, []);
+    setChooseItem(e.currentTarget.textContent)
+  }, [])
 
   return (
-    <div className="wrap">
-      <div className="title">DropDown</div>
-      <div className={styles.dropContainer}>
-        <div className={styles.dropButtonContent}>
-          <button className={styles.dropButton} onClick={onClickDropButton}>
+    <div className='wrap'>
+      <div className='title'>DropDown</div>
+      <div className={cx(styles.dropContainer)}>
+        <div className={cx(styles.dropButtonContent)}>
+          <button type='button' className={cx(styles.dropButton)} onClick={onClickDropButton}>
             {chooseItem}
           </button>
-          <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
+          <CaretDown />
         </div>
         {!toggle && (
-          <div className={styles.searchContainer}>
-            <div className={styles.searchContent}>
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                className={styles.faSearch}
-              ></FontAwesomeIcon>
+          <div className={cx(styles.searchContainer)}>
+            <div className={cx(styles.searchContent)}>
+              <Magnifying className={cx(styles.faSearch)} />
               <input
-                type="text"
-                placeholder="Search Symbol"
-                className={styles.searchBar}
+                type='text'
+                placeholder='Search Symbol'
+                className={cx(styles.searchBar)}
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
-            <div className={styles.searchItems}>
+            <div className={cx(styles.searchItems)}>
               {symbols
                 .filter((data) => {
-                  if (search === "") {
-                    return data;
+                  if (search === '') {
+                    return data
                   }
-                  let isMatch = data
-                    .toLowerCase()
-                    .includes(search.toLowerCase());
-                  return isMatch || data === "All Symbols" ? data : "";
+                  const isMatch = data.toLowerCase().includes(search.toLowerCase())
+                  return isMatch || data === 'All Symbols' ? data : ''
                 })
-                .map((data, index) => {
+                .map((value, index) => {
                   return (
                     <div
-                      key={index}
-                      className={styles.searchItem}
+                      role='button'
+                      key={`data-${value}}`}
+                      className={cx(styles.searchItem)}
                       onClick={onClickSearchItem}
+                      tabIndex={0}
                     >
-                      {data}
+                      {value}
                     </div>
-                  );
+                  )
                 })}
             </div>
           </div>
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default DropDown;
+export default DropDown

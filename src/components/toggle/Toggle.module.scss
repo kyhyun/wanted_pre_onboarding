@@ -1,32 +1,33 @@
 @charset "utf-8";
-/* Box Sizing Config */
+@use '/src/styles/constants/colors';
+
 .wrap * {
   box-sizing: border-box;
 }
 
 .contents,
 .slider {
-  display: flex;
   position: relative;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
   width: 300px;
   height: 40px;
   margin: 0 auto;
-  border-radius: 2rem;
-  background: #efefef;
   overflow: hidden;
+  background: #efefef;
+  border-radius: 2rem;
 }
 
 .slider {
   position: absolute;
+  left: -10px;
   z-index: 1;
-  background: #fff;
   width: 150px;
   height: 35px;
-  left: -10px;
-  transform: translateX(15px);
+  background: #fff;
   transition: transform 0.5s;
+  transform: translateX(15px);
 }
 
 .slider.selected {
@@ -36,16 +37,16 @@
 .contents .item {
   position: relative;
   z-index: 2;
-  height: 35px;
-  line-height: 35px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  border: none;
-  border-radius: inherit;
+  justify-content: center;
+  height: 35px;
   padding: 0 3.25em;
   font-weight: bold;
+  line-height: 35px;
+  color: colors.$GRAY4;
   cursor: pointer;
   background: none;
-  color: #444;
+  border: none;
+  border-radius: inherit;
 }
